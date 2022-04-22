@@ -21,7 +21,7 @@ function generatePdfs( df , folder, baseTeX )
         # open file of parameters and write values
         paramsFileFid = open( paramsFile , "w" )
         for col in 1:numCols
-            if typeof(row[col]) == String63
+            if typeof(row[col]) <:AbstractString
                 valueAsString = replace( row[col], "&"=>"\\&")
 
             elseif typeof(row[col]) == Int64
